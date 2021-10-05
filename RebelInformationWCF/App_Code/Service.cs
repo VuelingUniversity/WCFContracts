@@ -8,10 +8,10 @@ using System.Text;
 
 public class Service : IService {
     public string Add(Rebel rebel) {
-        throw new NotImplementedException();
+        return rebel.ToString();
     }
 
-    public string Notify(int value) {
-        throw new NotImplementedException();
+    public void Notify(Message message) {
+        // Aqui se gestionaria el envio de un message
     }
 }

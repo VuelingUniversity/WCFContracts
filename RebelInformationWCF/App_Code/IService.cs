@@ -10,7 +10,7 @@ using System.Text;
 [ServiceContract]
 public interface IService {
     [OperationContract(IsOneWay = true, Name = "SendNotification")]
-    string Notify(int value);
+    void Notify(Message message);
 
     [OperationContract(Name = "AddRebel")]
     string Add(Rebel rebel);
