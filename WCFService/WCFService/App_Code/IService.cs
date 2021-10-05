@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+
 using System.ServiceModel.Web;
 using System.Text;
 
@@ -10,10 +11,11 @@ using System.Text;
 [ServiceContract]
 public interface IService
 {
-	[OperationContract]
-	string GetRebelName(Rebel rebel);
-	[OperationContract]
-	Rebel GetRebelInformation(Rebel rebel);
+	[OperationContract(Name ="AddRebel")]
+	string Add(Rebel rebel);
+	[OperationContract(Name = "SendNotification")]
+	string Notification(Messages message);
+
 
 }
 

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 
-[DataContract(Name ="SendNotification")]
-public class Notification
+[DataContract]
+public class Messages
 {
 	string name;
 	string email;
