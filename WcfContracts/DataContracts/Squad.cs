@@ -9,29 +9,34 @@ namespace WcfContracts.DataContracts
     [DataContract]
     public class Squad
     {
+        private string _Name;
+        private string _Location;
+        private string _GalacticArea;
+        private DateTime _DeployDate;
+
         [DataMember]
         public string Name
         {
-            get { return Name; }
-            set { Name = value; }
+            get { return _Name; }
+            set { _Name = value; }
         }
         [DataMember]
         public string Location
         {
-            get { return Location; }
-            set { Location = value; }
+            get { return _Location; }
+            set { _Location = value; }
         }
         [DataMember]
         public string GalacticArea
         {
-            get { return GalacticArea; }
-            set { GalacticArea = value; }
+            get { return _GalacticArea; }
+            set { _GalacticArea = value; }
         }
         [DataMember]
         public DateTime DeployDate
         {
-            get { return DeployDate; }
-            set { DeployDate = value; }
+            get { return _DeployDate; }
+            set { _DeployDate = value; }
         }
     }
 }

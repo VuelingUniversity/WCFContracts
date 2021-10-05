@@ -9,17 +9,19 @@ namespace WcfContracts.DataContracts
     [DataContract]
     public class GeoLocation
     {
+        private int _CoordX;
+        private int _CoordY;
         [DataMember]
         public int CoordX
         {
-            get { return CoordX; }
-            set { CoordX = value; }
+            get { return _CoordX; }
+            set { _CoordX = value; }
         }
         [DataMember]
         public int CoordY
         {
-            get { return CoordY; }
-            set { CoordY = value; }
+            get { return _CoordY; }
+            set { _CoordY = value; }
         }
     }
 }
