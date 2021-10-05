@@ -14,14 +14,14 @@ namespace WCFContracts.Models
         private string _name;
         private DateTime _registerTime;
 
-        [DataMember]
+        [DataMember(EmitDefaultValue = false)]
         public Squad Squad
         {
             get { return _squad; }
             set { _squad = value; }
         }
 
-        [DataMember]
+        [DataMember(EmitDefaultValue = false)]
         public GeoLocation GeoLocation
         {
             get { return _geoLocation; }
