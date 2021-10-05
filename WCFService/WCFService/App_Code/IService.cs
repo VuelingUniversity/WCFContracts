@@ -13,7 +13,7 @@ public interface IService
 {
 	[OperationContract(Name ="AddRebel")]
 	string Add(Rebel rebel);
-	[OperationContract(Name = "SendNotification")]
+	[OperationContract(Name = "SendNotification", IsOneWay =true)]
 	string Notification(Messages message);
 
 
