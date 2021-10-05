@@ -10,7 +10,7 @@ public class Messages
 	string name;
 	string email;
 
-	[DataMember(Order =1]
+	[DataMember(Order =1)]
 	public string Name
 	{
 		get { return name; }

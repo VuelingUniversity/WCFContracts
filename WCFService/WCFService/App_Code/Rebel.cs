@@ -32,7 +32,7 @@ public class Rebel
         get { return name; }
         set { name = value; }
     }
-    [DataMember]
+    [DataMember(Name ="datetime")]
     public DateTime JoiningDate
     {
         get { return joiningDate; }
