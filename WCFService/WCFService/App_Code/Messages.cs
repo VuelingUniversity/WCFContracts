@@ -10,14 +10,14 @@ public class Messages
 	string name;
 	string email;
 
-	[DataMember(Name = "orden 1")]
+	[DataMember(Order =1]
 	public string Name
 	{
 		get { return name; }
 		set { name = value; }
 	}
 
-	[DataMember(Name = "orden 0")]
+	[DataMember(Order =0)]
 	public string Email
 	{
 		get { return email; }
