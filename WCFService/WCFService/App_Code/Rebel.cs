@@ -26,13 +26,13 @@ public class Rebel
         get { return geoLocalitation; }
         set { geoLocalitation = value; }
     }
-    [DataMember]
+    [DataMember(IsRequired =true)]
     public string Name
     {
         get { return name; }
         set { name = value; }
     }
-    [DataMember(Name ="datetime")]
+    [DataMember(Name ="datetime", IsRequired =true)]
     public DateTime JoiningDate
     {
         get { return joiningDate; }
