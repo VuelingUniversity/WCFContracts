@@ -8,8 +8,8 @@ using System.Web;
 [DataContract]
 public class GeoLocalitation
 {
-	public int x;
-	public int y;
+	public int x = 2;
+	public int y=3;
 	[DataMember]
 	public int X
 	{

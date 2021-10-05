@@ -7,9 +7,9 @@ using System.Web;
 [DataContract]
 public class Squad
 {
-    string name;
-    string localitation;
-    DateTime arrival;
+    string name = "Patatera";
+    string localitation = "Pluton";
+    DateTime arrival= DateTime.Now;
     [DataMember]
     public string Name
     {

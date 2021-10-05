@@ -13,9 +13,7 @@ public class Rebel
     Squad squad;
     GeoLocalitation geoLocalitation;
     string name;
-
-    DateTime JoiningDate;
-
+    DateTime JoiningDate = DateTime.Now;
     [DataMember]
     public Squad Squad
     {

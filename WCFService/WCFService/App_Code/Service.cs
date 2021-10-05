@@ -13,17 +13,12 @@ public class Service : IService
 	{
 		return string.Format("You entered: {0}", value);
 	}
-
-	public CompositeType GetDataUsingDataContract(CompositeType composite)
-	{
-		if (composite == null)
-		{
-			throw new ArgumentNullException("composite");
-		}
-		if (composite.BoolValue)
-		{
-			composite.StringValue += "Suffix";
-		}
-		return composite;
+    public Rebel GetRebelInformation(Rebel rebel)
+    {	
+		return new Rebel() { Name = rebel.Name, GeoLocalitation=rebel.GeoLocalitation,Squad=rebel.Squad };
 	}
+    public string GetRebelName(Rebel rebel)
+    {
+		return rebel.Name;
+    }
 }
