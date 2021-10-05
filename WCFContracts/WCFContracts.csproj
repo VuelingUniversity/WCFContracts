@@ -65,10 +65,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\GeoLocation.cs" />
-    <Compile Include="Models\Message.cs" />
-    <Compile Include="Models\Rebel.cs" />
-    <Compile Include="Models\Squad.cs" />
+    <Compile Include="Contracts\GeoLocation.cs" />
+    <Compile Include="Contracts\Message.cs" />
+    <Compile Include="Contracts\Rebel.cs" />
+    <Compile Include="Contracts\Squad.cs" />
     <Compile Include="RebelService.svc.cs">
       <DependentUpon>RebelService.svc</DependentUpon>
     </Compile>
