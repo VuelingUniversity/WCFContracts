@@ -8,37 +8,105 @@ using System.Text;
 
 namespace WCFContracts
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
+    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
     [ServiceContract]
     public interface IService1
     {
 
-        [OperationContract]
-        string GetData(int value);
+        [OperationContract(Name = "AddRebel")]
+        void Add(Rebel rebel);
 
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        [OperationContract(IsOneWay = true)]
+        void SendNotification(string name,string email);
 
-        // TODO: Add your service operations here
+        // TODO: agregue aquí sus operaciones de servicio
     }
 
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
+    // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
     [DataContract]
-    public class CompositeType
+    public class Rebel
     {
         bool boolValue = true;
         string stringValue = "Hello ";
 
         [DataMember]
-        public bool BoolValue
+        public Squad Squad
         {
             get { return boolValue; }
             set { boolValue = value; }
         }
 
         [DataMember]
-        public string StringValue
+        public GeoLocation GeoLocation
+        {
+            get { return stringValue; }
+            set { stringValue = value; }
+        }
+
+        [DataMember(Name = "Name")]
+        public string RebelName
+        {
+            get;
+            set;
+        }
+
+        [DataMember(Name = "dateTime")]
+        public DateTime JoinningDate
+        {
+            get { return DateTime.Now; }
+            set { DateTime = value; }
+        }
+    }
+    [DataContract]
+    public class Squad
+    {
+        [DataMember]
+        public string Name
+        {
+            get { return stringValue; }
+            set { stringValue = value; }
+        }
+        [DataMember]
+        public string Location
+        {
+            get { return stringValue; }
+            set { stringValue = value; }
+        }
+        [DataMember]
+        public DateTime Date
+        {
+            get { return stringValue; }
+            set { stringValue = value; }
+        }
+    }
+    [DataContract]
+    public class GeoLocation
+    {
+        [DataMember]
+        public int CoordX
+        {
+            get { return stringValue; }
+            set { stringValue = value; }
+        }
+        [DataMember]
+        public int CoordY
+        {
+            get { return stringValue; }
+            set { stringValue = value; }
+        }
+    }
+    [DataContract(Name = "SendNotification")]
+    public class Notify
+    {
+        [DataMember(Order =1)]
+        public string Name
+        {
+            get { return stringValue; }
+            set { stringValue = value; }
+        }
+        [DataMember(Order = 0)]
+        public string Email
         {
             get { return stringValue; }
             set { stringValue = value; }
