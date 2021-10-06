@@ -8,26 +8,24 @@ using System.Text;
 
 namespace WCFContracts
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class Service1 : IService1
+public class Service1 : IService1
     {
-        public string GetData(int value)
+        private List<Rebel> newRebel = new List<Rebel>();
+        public void Add(Rebel rebel)
         {
-            return string.Format("You entered: {0}", value);
+            newRebel.Add(rebel);
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public void SendNotification(string name, string email)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            var smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential("clafuente@gteam.com", "Teruel09"),
+                    EnableSsl = true,
+                };
+            string body = $"Hola {name} este es tu email";
+            smtpClient.Send("clafuente@gteam.com", email, "subject", body);
         }
     }
 }
