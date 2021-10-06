@@ -83,10 +83,10 @@ namespace WcfContractService
         private string _name;
         private string _email;
 
-        [DataMember(Name = "order1", IsRequired = true)]
+        [DataMember(Order = 1, IsRequired = true)]
         public string Name { get => _name; set => _name = value; }
 
-        [DataMember(Name = "order0", IsRequired = false)]
+        [DataMember(Order = 0, IsRequired = false)]
         public string Email { get => _email; set => _email = value; }
     }
 }
